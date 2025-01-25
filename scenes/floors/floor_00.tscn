@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://c4015jf10foy6"]
+[gd_scene load_steps=6 format=4 uid="uid://c4015jf10foy6"]
 
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="1_jiq0s"]
 [ext_resource type="Texture2D" uid="uid://dkqbhry02tcnh" path="res://assets/sprites/tilemaps/placeholder.png" id="1_u38iy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p3lqf"]
+friction = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qxm8"]
 texture = ExtResource("1_u38iy")
@@ -55,6 +58,7 @@ texture_region_size = Vector2i(40, 40)
 [sub_resource type="TileSet" id="TileSet_5ns82"]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_p3lqf")
 sources/0 = SubResource("TileSetAtlasSource_3qxm8")
 
 [node name="Floor00" type="Node2D"]
@@ -67,4 +71,5 @@ tile_map_data = PackedByteArray("AAAAABAAAAABAAAAAAAAABEAAAABAAAAAAABABAAAAABAAA
 tile_set = SubResource("TileSet_5ns82")
 
 [node name="Player" parent="." instance=ExtResource("1_jiq0s")]
-position = Vector2(667, 582)
+position = Vector2(667, 585)
+floor_snap_length = 1.0

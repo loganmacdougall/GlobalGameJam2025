@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 const FLUTTER_POWER = 100.0
+const FLOOR_FRICTION = 200
 const MIN_BUBBLE_POWER = 500
 const MAX_BUBBLE_POWER = 900
 
@@ -16,8 +17,10 @@ const ANI_WALKING = "walking"
 @onready var bubble : Bubble = %Bubble
 @onready var sprite : AnimatedSprite2D = %AnimatedSprite2D
 
+var vel = Vector2(0, 0)
 var bubble_starting: Vector2
 var previously_on_floor: bool
+var sliding = false
 var sprite_crouching: bool:
 	get():
 		return sprite.animation == ANI_BLOW_STANDING or \
@@ -48,27 +51,38 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity = get_real_velocity()
+		vel = get_real_velocity()
+		
+	if just_landed_on_floor:
+		sliding = true
+		
+	if sliding:
+		vel = get_real_velocity()
+		vel.x = move_toward(vel.x, 0, delta * FLOOR_FRICTION)
+		if vel.x == 0:
+			vel.y = 0
+			sliding = false
 		
 	handle_bubble_blowing(delta)
 	handle_jumping()
-	
+
 	if is_on_floor():
 		handle_walking()
 	else:
 		handle_fluttering(delta)
 	
 	handle_bubble_offsets()
-	velocity.y = min(velocity.y + gravity * delta, gravity / 2)
+	vel.y = min(vel.y + gravity * delta, gravity / 2)
 	previously_on_floor = is_on_floor()
 	
+	velocity = vel
 	move_and_slide()
 	
 func handle_bubble_blowing(delta: float):
 	var just_pressed_jump = Input.is_action_just_pressed("Jump")
 	var just_released_jump = Input.is_action_just_released("Jump")
 	
-	if is_on_floor() and just_pressed_jump:
+	if is_on_floor() and just_pressed_jump and not sliding:
 		blowing_bubble = true
 	elif just_released_jump:
 		blowing_bubble = false
@@ -113,8 +127,8 @@ func handle_jumping():
 	var just_released_jump = Input.is_action_just_released("Jump")
 	var on_floor = is_on_floor()
 	
-	if just_released_jump and on_floor:
-		velocity.y = JUMP_VELOCITY
+	if just_released_jump and on_floor and not sliding:
+		vel.y = JUMP_VELOCITY
 	elif just_pressed_jump and not blowing_bubble and not on_floor and bubble_size > 0:
 		bubble.pop_bubble()
 	
@@ -123,7 +137,7 @@ func handle_fluttering(delta: float):
 	var direction = Input.get_axis("Left", "Right")
 	var flipped = sprite.flip_h
 	
-	velocity.x += direction * delta * FLUTTER_POWER
+	vel.x += direction * delta * FLUTTER_POWER
 	
 	if direction > 0:
 		if flipped:
@@ -135,7 +149,7 @@ func handle_fluttering(delta: float):
 			sprite.play(ANI_FLUTTER_RIGHT)
 		else:
 			sprite.play(ANI_FLUTTER_LEFT)
-	elif velocity.x > 0:
+	elif vel.x > 0:
 		if flipped:
 			sprite.play(ANI_FLUTTER_LEFT)
 		else:
@@ -150,6 +164,9 @@ func handle_fluttering(delta: float):
 		
 
 func handle_walking():
+	if sliding:
+		return
+		
 	var direction = Input.get_axis("Left", "Right")
 	
 	if blowing_bubble and direction == 0:
@@ -167,6 +184,6 @@ func handle_walking():
 		sprite.flip_h = direction <= 0
 	
 	if direction:
-		velocity.x = direction * SPEED
+		vel.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		vel.x = move_toward(vel.x, 0, SPEED)

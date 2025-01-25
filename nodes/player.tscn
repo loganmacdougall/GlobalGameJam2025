@@ -128,6 +128,7 @@ animations = [{
 floor_stop_on_slope = false
 floor_constant_speed = true
 floor_max_angle = 0.436332
+floor_snap_length = 0.0
 script = ExtResource("1_nla4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
