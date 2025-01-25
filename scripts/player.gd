@@ -5,6 +5,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 const FLUTTER_POWER = 100.0
 const FLOOR_FRICTION = 200
+const SLIDE_SPEED = 200
 const MIN_BUBBLE_POWER = 500
 const MAX_BUBBLE_POWER = 900
 
@@ -88,7 +89,8 @@ func _physics_process(delta: float) -> void:
 		vel = get_real_velocity()
 		
 	if just_landed_on_floor:
-		sliding = true
+		if get_real_velocity().length_squared() >= SLIDE_SPEED * SLIDE_SPEED:
+			sliding = true
 		
 	if sliding:
 		if not just_copied:
