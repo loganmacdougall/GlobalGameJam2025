@@ -47,6 +47,9 @@ func _ready() -> void:
 	previously_on_floor = is_on_floor()
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity = get_real_velocity()
+		
 	handle_bubble_blowing(delta)
 	handle_jumping()
 	
