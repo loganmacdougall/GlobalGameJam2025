@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmt6u2uu2ow53"]
+[gd_scene load_steps=12 format=3 uid="uid://dmt6u2uu2ow53"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nla4p"]
 [ext_resource type="Texture2D" uid="uid://cthmr81wq7f21" path="res://assets/sprites/player_sprites/player.png" id="2_xa3i5"]
+[ext_resource type="PackedScene" uid="uid://cn0fdcsnyvja5" path="res://nodes/bubble.tscn" id="3_jtkl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d33ov"]
 size = Vector2(11, 27)
@@ -71,7 +72,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_nla4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -82,4 +83,8 @@ shape = SubResource("RectangleShape2D_d33ov")
 unique_name_in_owner = true
 position = Vector2(-2, -2)
 sprite_frames = SubResource("SpriteFrames_5qilq")
-animation = &"going_right"
+animation = &"ready_to_blow"
+
+[node name="Bubble" parent="." instance=ExtResource("3_jtkl6")]
+unique_name_in_owner = true
+position = Vector2(5.5, -33.5)
