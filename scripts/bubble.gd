@@ -13,7 +13,7 @@ const POP_SIZE = 1.25
 @onready var ColShape5: CollisionShape2D = %ColShape5
 
 var bubble_size = 0.0
-var blowing_bubble = true
+var blowing_bubble = false
 
 var bubble_frame : int : 
 	get():
@@ -63,7 +63,8 @@ func pop_bubble():
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		return
-		
+	
+	print("body popped by: " + str(body.name))
 	pop_bubble()
 
 

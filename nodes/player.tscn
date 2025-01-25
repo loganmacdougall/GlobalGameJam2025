@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nla4p"]
 [ext_resource type="Texture2D" uid="uid://02pewb6od5ry" path="res://assets/sprites/player_sprites/player_sprites.png" id="2_b7uvw"]
-[ext_resource type="PackedScene" uid="uid://dtb4wfv4rxhcr" path="res://nodes/bubble.tscn" id="3_jtkl6"]
+[ext_resource type="PackedScene" uid="uid://cn0fdcsnyvja5" path="res://nodes/bubble.tscn" id="3_jtkl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d33ov"]
 size = Vector2(11, 27)
@@ -131,11 +131,11 @@ script = ExtResource("1_nla4p")
 position = Vector2(-3, 2)
 shape = SubResource("RectangleShape2D_d33ov")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
 unique_name_in_owner = true
 position = Vector2(-5, -9)
 sprite_frames = SubResource("SpriteFrames_5qilq")
-animation = &"going_left"
+animation = &"walking"
 
 [node name="Bubble" parent="." instance=ExtResource("3_jtkl6")]
 unique_name_in_owner = true
