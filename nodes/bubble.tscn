@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtb4wfv4rxhcr"]
+[gd_scene load_steps=18 format=3 uid="uid://cn0fdcsnyvja5"]
 
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_p4o00"]
 [ext_resource type="Texture2D" uid="uid://camsgyn7i1n27" path="res://assets/sprites/player_sprites/bubble.png" id="1_t86f4"]
 [ext_resource type="Texture2D" uid="uid://dpdc411c5ycnu" path="res://assets/sprites/player_sprites/bubble_pop.png" id="2_xhjd2"]
 
@@ -140,8 +141,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3rxdt"]
+
 [node name="Bubble" type="Area2D"]
+script = ExtResource("1_p4o00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gjvin")
 animation = &"pop_3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3rxdt")
