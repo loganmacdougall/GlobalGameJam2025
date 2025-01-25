@@ -81,4 +81,4 @@ shape = SubResource("RectangleShape2D_d33ov")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -2)
 sprite_frames = SubResource("SpriteFrames_5qilq")
-animation = &"going_left"
+animation = &"ready_to_blow"
