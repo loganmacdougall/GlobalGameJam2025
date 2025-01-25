@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dtb4wfv4rxhcr"]
+[gd_scene load_steps=29 format=3 uid="uid://cn0fdcsnyvja5"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_p4o00"]
 [ext_resource type="Texture2D" uid="uid://camsgyn7i1n27" path="res://assets/sprites/player_sprites/bubble.png" id="1_t86f4"]
@@ -194,13 +194,61 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3rxdt"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2xipp"]
+radius = 3.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqd61"]
+radius = 6.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxnou"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kncqk"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llsj7"]
+radius = 12.0
 
 [node name="Bubble" type="Area2D"]
 script = ExtResource("1_p4o00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_gjvin")
-animation = &"pop_5"
+animation = &"grow_0"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ColShape0" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 11)
 shape = SubResource("CapsuleShape2D_3rxdt")
+
+[node name="ColShape1" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 10)
+shape = SubResource("CapsuleShape2D_2xipp")
+
+[node name="ColShape2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 5)
+shape = SubResource("CapsuleShape2D_fqd61")
+
+[node name="ColShape3" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_pxnou")
+
+[node name="ColShape4" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_kncqk")
+
+[node name="ColShape5" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, -3)
+shape = SubResource("CircleShape2D_llsj7")
