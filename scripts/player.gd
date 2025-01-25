@@ -15,6 +15,8 @@ const ANI_BLOW_STANDING = "ready_to_blow"
 const ANI_BLOW_WALKING = "blowing_walking"
 const ANI_STANDING = "standing_still"
 const ANI_WALKING = "walking"
+const ANI_FALLING_FORWARD = "falling_face_forward"
+const ANI_FALLING_BACKWARD = "Falling_backwards"
 
 @onready var bubble : Bubble = %Bubble
 @onready var sprite : AnimatedSprite2D = %AnimatedSprite2D
@@ -22,6 +24,7 @@ const ANI_WALKING = "walking"
 var vel = Vector2(0, 0)
 var just_copied = false
 var bubble_starting: Vector2
+var player_sprite_starting: Vector2
 var previously_on_floor: bool
 var sliding = false
 var sprite_crouching: bool:
@@ -54,6 +57,7 @@ func _ready() -> void:
 		copy_struct(player_data)
 		just_copied = true
 	bubble_starting = bubble.position
+	player_sprite_starting = sprite.position
 	previously_on_floor = is_on_floor()
 
 func create_struct() -> PlayerStruct:
@@ -99,6 +103,11 @@ func _physics_process(delta: float) -> void:
 		if vel.x == 0:
 			vel.y = 0
 			sliding = false
+		elif vel.x > 0 or (sprite.flip_h and vel.x < 0):
+			sprite.play(ANI_FALLING_FORWARD)
+		else:
+			sprite.play(ANI_FALLING_BACKWARD)
+
 		
 	handle_bubble_blowing(delta)
 	handle_jumping()
@@ -108,7 +117,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		handle_fluttering(delta)
 	
-	handle_bubble_offsets()
+	handle_sprite_offsets()
 	vel.y = min(vel.y + gravity * delta, gravity / 2)
 	previously_on_floor = is_on_floor()
 	just_copied = false
@@ -133,11 +142,12 @@ func handle_bubble_blowing(delta: float):
 	else:
 		gravity = base_gravity
 
-func handle_bubble_offsets():
+func handle_sprite_offsets():
 	const BUBBLE_BLOWING_OFFSET_Y = 7
 	const BUBBLE_FLUTTER_LEFT_OFFSET_X = -4
 	const BUBBLE_FLUTTER_RIGHT_OFFSET_X = 2
 	const BUBBLE_FLIP_OFFSET = -21
+	const FALLING_OFFSET_Y = 20
 	
 	var x_offset: float = 0
 	var y_offset: float = 0
@@ -159,6 +169,13 @@ func handle_bubble_offsets():
 	
 	bubble.position = Vector2(x_pos, y_pos)
 	bubble.sprite.flip_h = sprite.flip_h
+	
+	var sprite_y = player_sprite_starting.y
+	if sliding:
+		sprite_y += FALLING_OFFSET_Y
+		
+	sprite.position.y = sprite_y
+	
 
 func handle_jumping():
 	var just_pressed_jump = Input.is_action_just_pressed("Jump")
