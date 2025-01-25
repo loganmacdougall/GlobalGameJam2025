@@ -48,9 +48,10 @@ func update():
 		sprite.play(grow_animation_name)
 	else:
 		visible = false
-	activate_correct_collider()
+	print(bubble_frame)
+	activate_correct_collider(true)
 
-func activate_correct_collider():
+func activate_correct_collider(force: bool = false ):
 	var CollisionList = [ColShape0, ColShape1, ColShape2, ColShape3, ColShape4, ColShape5]
 	
 	var current_bubble_frame = bubble_frame if bubble_size > 0 else -1
@@ -58,7 +59,9 @@ func activate_correct_collider():
 		var col: CollisionShape2D = CollisionList[i]
 		var col_disabled = i != current_bubble_frame
 		var needs_change = col.disabled != col_disabled
-		if needs_change:
+		if needs_change or force:
+			print("Changed ", i, " to ", "off" if col_disabled else "on")
+			col.visible = !col_disabled
 			col.set_deferred("disabled", col_disabled)
 
 func pop_bubble():
