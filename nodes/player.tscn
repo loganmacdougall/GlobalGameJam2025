@@ -79,6 +79,7 @@ position = Vector2(-2.5, 3.5)
 shape = SubResource("RectangleShape2D_d33ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-2, -2)
 sprite_frames = SubResource("SpriteFrames_5qilq")
-animation = &"going_left"
+animation = &"going_right"
