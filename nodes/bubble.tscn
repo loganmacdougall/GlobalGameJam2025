@@ -215,7 +215,7 @@ radius = 11.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_llsj7"]
 radius = 12.0
 
-[node name="Bubble" type="Area2D" groups=["Player"]]
+[node name="Bubble" type="Area2D"]
 position = Vector2(103, 40)
 script = ExtResource("1_p4o00")
 
