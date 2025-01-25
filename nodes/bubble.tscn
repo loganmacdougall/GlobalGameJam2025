@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cn0fdcsnyvja5"]
+[gd_scene load_steps=24 format=3 uid="uid://dtb4wfv4rxhcr"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_p4o00"]
 [ext_resource type="Texture2D" uid="uid://camsgyn7i1n27" path="res://assets/sprites/player_sprites/bubble.png" id="1_t86f4"]
@@ -51,6 +51,30 @@ region = Rect2(0, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufyyg"]
 atlas = ExtResource("2_xhjd2")
 region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcp6q"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atqbp"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(35, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2snay"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gj8p"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(35, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7kyc"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhpuw"]
+atlas = ExtResource("2_xhjd2")
+region = Rect2(35, 160, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjvin"]
 animations = [{
@@ -135,9 +159,37 @@ animations = [{
 "name": &"pop_2",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcp6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atqbp")
+}],
 "loop": true,
 "name": &"pop_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2snay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gj8p")
+}],
+"loop": true,
+"name": &"pop_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7kyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhpuw")
+}],
+"loop": true,
+"name": &"pop_5",
 "speed": 5.0
 }]
 
@@ -148,7 +200,7 @@ script = ExtResource("1_p4o00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gjvin")
-animation = &"pop_3"
+animation = &"pop_5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3rxdt")
