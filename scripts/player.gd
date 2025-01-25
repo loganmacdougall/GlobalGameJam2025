@@ -37,7 +37,7 @@ var bubble_size: float:
 	get():
 		return bubble.bubble_size
 
-var base_gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var base_gravity: float = Global.gravity
 var gravity: float:
 	get():
 		if bubble_size > 0:

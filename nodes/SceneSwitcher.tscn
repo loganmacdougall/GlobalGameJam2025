@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwwbpvbdarl14"]
+
+[ext_resource type="Script" path="res://scripts/scene_switcher.gd" id="1_80pr8"]
+
+[node name="SceneSwitcher" type="Area2D"]
+script = ExtResource("1_80pr8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
