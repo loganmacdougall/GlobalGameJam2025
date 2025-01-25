@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cgtnaoefywm7e"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bl3vxq2god1tc"]
 
 [ext_resource type="Texture2D" uid="uid://dkqbhry02tcnh" path="res://assets/sprites/tilemaps/placeholder.png" id="1_octdd"]
 [ext_resource type="Texture2D" uid="uid://dpffyrn0woofo" path="res://assets/sprites/tilemaps/bubble_city_tilemap.png" id="2_dmsqc"]
