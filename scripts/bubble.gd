@@ -42,7 +42,14 @@ func _process(delta: float):
 		
 	if bubble_size >= POP_SIZE:
 		pop_bubble()
-	
+
+func update():
+	if bubble_size > 0:
+		sprite.play(grow_animation_name)
+	else:
+		visible = false
+	activate_correct_collider()
+
 func activate_correct_collider():
 	var CollisionList = [ColShape0, ColShape1, ColShape2, ColShape3, ColShape4, ColShape5]
 	
@@ -64,7 +71,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		return
 	
-	print("body popped by: " + str(body.name))
 	pop_bubble()
 
 

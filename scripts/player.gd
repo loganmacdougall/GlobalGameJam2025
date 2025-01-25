@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 const SPEED = 100.0
@@ -18,6 +19,7 @@ const ANI_WALKING = "walking"
 @onready var sprite : AnimatedSprite2D = %AnimatedSprite2D
 
 var vel = Vector2(0, 0)
+var just_copied = false
 var bubble_starting: Vector2
 var previously_on_floor: bool
 var sliding = false
@@ -46,18 +48,51 @@ var gravity: float:
 			return base_gravity
 
 func _ready() -> void:
+	var player_data = Global.pop_player_data()
+	if player_data != null:
+		copy_struct(player_data)
+		just_copied = true
 	bubble_starting = bubble.position
 	previously_on_floor = is_on_floor()
 
+func create_struct() -> PlayerStruct:
+	var struct: PlayerStruct = PlayerStruct.new()
+	
+	struct.position = position
+	struct.velocity = velocity
+	
+	struct.vel = vel
+	struct.sliding = sliding
+	struct.bubble_size = bubble_size
+	struct.blowing_bubble = blowing_bubble
+	struct.flipped = sprite.flip_h
+	struct.animation = sprite.animation
+	
+	return struct
+
+func copy_struct(struct: PlayerStruct):
+	position = struct.position
+	velocity = struct.velocity
+	
+	vel = struct.vel
+	sliding = struct.sliding
+	bubble.bubble_size = struct.bubble_size
+	bubble.blowing_bubble = struct.blowing_bubble
+	sprite.flip_h = struct.flipped
+	sprite.animation = struct.animation
+	
+	bubble.update()
+
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if not is_on_floor() and not just_copied:
 		vel = get_real_velocity()
 		
 	if just_landed_on_floor:
 		sliding = true
 		
 	if sliding:
-		vel = get_real_velocity()
+		if not just_copied:
+			vel = get_real_velocity()
 		vel.x = move_toward(vel.x, 0, delta * FLOOR_FRICTION)
 		if vel.x == 0:
 			vel.y = 0
@@ -74,6 +109,7 @@ func _physics_process(delta: float) -> void:
 	handle_bubble_offsets()
 	vel.y = min(vel.y + gravity * delta, gravity / 2)
 	previously_on_floor = is_on_floor()
+	just_copied = false
 	
 	velocity = vel
 	move_and_slide()
