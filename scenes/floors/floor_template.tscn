@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=4 uid="uid://beoyynwmd35xx"]
+[gd_scene load_steps=6 format=4 uid="uid://beoyynwmd35xx"]
 
 [ext_resource type="TileSet" uid="uid://cgtnaoefywm7e" path="res://assets/tilesets/game_tileset.tres" id="1_o6xwf"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_r77tg"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_ofphg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
+size = Vector2(1379, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo7co"]
+size = Vector2(1372, 40)
 
 [node name="FloorTemplate" type="Node2D"]
 
@@ -14,3 +21,19 @@ tile_set = ExtResource("1_o6xwf")
 
 [node name="Player" parent="." instance=ExtResource("2_r77tg")]
 position = Vector2(628, 625)
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("3_ofphg")]
+position = Vector2(79, 707)
+next_scene_direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher"]
+position = Vector2(559.5, 33.5)
+shape = SubResource("RectangleShape2D_hm5qd")
+
+[node name="SceneSwitcher2" parent="." instance=ExtResource("3_ofphg")]
+position = Vector2(1133, -16)
+scene_number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
+position = Vector2(-496, -4)
+shape = SubResource("RectangleShape2D_mo7co")

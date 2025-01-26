@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cgtnaoefywm7e"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://cgtnaoefywm7e"]
 
 [ext_resource type="Texture2D" uid="uid://dkqbhry02tcnh" path="res://assets/sprites/tilemaps/placeholder.png" id="1_octdd"]
 [ext_resource type="Texture2D" uid="uid://dpffyrn0woofo" path="res://assets/sprites/tilemaps/bubble_city_tilemap.png" id="2_dmsqc"]
 [ext_resource type="Texture2D" uid="uid://b4iokfmmor0yp" path="res://assets/sprites/tilemaps/bubble_trees.png" id="3_m3ak7"]
 [ext_resource type="Texture2D" uid="uid://do6pbwknhimci" path="res://assets/sprites/tilemaps/bubble_mountains.png" id="4_8g0ob"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hygvs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3qxm8"]
 texture = ExtResource("1_octdd")
@@ -161,6 +163,20 @@ texture_region_size = Vector2i(40, 40)
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
+8:3/next_alternative_id = 2
+8:3/0 = 0
+8:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(-20, -9.01561, 20, -9.19239, 20, 8.83883, -20, 9)
+8:3/1 = 1
+8:3/1/transpose = true
+8:3/1/physics_layer_1/polygon_0/points = PackedVector2Array(-9, -20, 9.12, -20, 8.83939, 20, -8.83939, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ksd8"]
 texture = ExtResource("2_dmsqc")
@@ -289,6 +305,7 @@ texture_region_size = Vector2i(40, 40)
 [resource]
 tile_size = Vector2i(40, 40)
 physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_hygvs")
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_3qxm8")

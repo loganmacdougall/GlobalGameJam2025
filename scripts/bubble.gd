@@ -60,7 +60,6 @@ func activate_correct_collider(force: bool = false ):
 		var col_disabled = i != current_bubble_frame
 		var needs_change = col.disabled != col_disabled
 		if needs_change or force:
-			print("Changed ", i, " to ", "off" if col_disabled else "on")
 			col.visible = !col_disabled
 			col.set_deferred("disabled", col_disabled)
 
