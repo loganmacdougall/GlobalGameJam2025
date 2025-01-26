@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bynaosr1v1chk"]
+
+[ext_resource type="Texture2D" uid="uid://c4usirwtaeux2" path="res://assets/sprites/background/bubble_sky.png" id="1_l1oad"]
+
+[node name="Bubble_Sky_background" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1oad")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 360)
+
+[node name="background_clouds" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1oad")
+region_enabled = true
+region_rect = Rect2(0, 360, 640, 360)
+
+[node name="background_shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1oad")
+region_enabled = true
+region_rect = Rect2(0, 720, 640, 360)
+
+[node name="main_clouds" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1oad")
+region_enabled = true
+region_rect = Rect2(0, 1080, 640, 360)
+
+[node name="main_shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1oad")
+region_enabled = true
+region_rect = Rect2(0, 1440, 640, 360)
