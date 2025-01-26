@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://rlpg4uhkif2u" path="res://nodes/bubble_mountains_background.tscn" id="1_6jh1h"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_dpvsx"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_d0hl0"]
-[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_381wq"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_381wq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oe8sf"]
 size = Vector2(1379, 39)
