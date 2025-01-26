@@ -11,6 +11,7 @@ const POP_SIZE = 1.25
 @onready var ColShape3: CollisionShape2D = %ColShape3
 @onready var ColShape4: CollisionShape2D = %ColShape4
 @onready var ColShape5: CollisionShape2D = %ColShape5
+@onready var PopSound: AudioStreamPlayer2D = %PopSoundEffect
 
 var bubble_size = 0.0
 var blowing_bubble = false
@@ -63,9 +64,13 @@ func activate_correct_collider(force: bool = false ):
 			col.set_deferred("disabled", col_disabled)
 
 func pop_bubble():
+	if bubble_size == 0:
+		return
+		
 	sprite.play(pop_animation_name)
 	blowing_bubble = false
 	bubble_size = 0
+	PopSound.play(0)
 	activate_correct_collider()
 
 func _on_body_entered(body: Node2D) -> void:

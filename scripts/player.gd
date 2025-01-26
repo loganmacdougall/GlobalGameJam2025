@@ -20,6 +20,8 @@ const ANI_FALLING_BACKWARD = "Falling_backwards"
 
 @onready var bubble : Bubble = %Bubble
 @onready var sprite : AnimatedSprite2D = %AnimatedSprite2D
+@onready var jump_sound: AudioStreamPlayer2D = %JumpSoundEffect
+@onready var slide_sound: AudioStreamPlayer2D = %SlidingSoundEffect
 
 var vel = Vector2(0, 0)
 var just_copied = false
@@ -95,6 +97,7 @@ func _physics_process(delta: float) -> void:
 	if just_landed_on_floor:
 		if get_real_velocity().length_squared() >= SLIDE_SPEED * SLIDE_SPEED:
 			sliding = true
+			slide_sound.play(0)
 		
 	if sliding:
 		if not just_copied:
@@ -103,6 +106,7 @@ func _physics_process(delta: float) -> void:
 		if vel.x == 0:
 			vel.y = 0
 			sliding = false
+			slide_sound.stop()
 		elif vel.x > 0 or (sprite.flip_h and vel.x < 0):
 			sprite.play(ANI_FALLING_FORWARD)
 		else:
@@ -184,6 +188,7 @@ func handle_jumping():
 	
 	if just_released_jump and on_floor and not sliding:
 		vel.y = JUMP_VELOCITY
+		jump_sound.play(0.3)
 	elif just_pressed_jump and not blowing_bubble and not on_floor and bubble_size > 0:
 		bubble.pop_bubble()
 	

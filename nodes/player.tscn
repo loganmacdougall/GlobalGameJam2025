@@ -1,8 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmt6u2uu2ow53"]
+[gd_scene load_steps=24 format=3 uid="uid://dmt6u2uu2ow53"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nla4p"]
 [ext_resource type="Texture2D" uid="uid://02pewb6od5ry" path="res://assets/sprites/player_sprites/player_sprites.png" id="2_b7uvw"]
 [ext_resource type="PackedScene" uid="uid://cn0fdcsnyvja5" path="res://nodes/bubble.tscn" id="3_jtkl6"]
+[ext_resource type="AudioStream" uid="uid://74h1koc6mwal" path="res://assets/audio/jump_sound_effect.mp3" id="4_3kt63"]
+[ext_resource type="AudioStream" uid="uid://nb3t7om46ish" path="res://assets/audio/sliding_sound_effect.mp3" id="5_no3im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d33ov"]
 size = Vector2(11, 27)
@@ -182,3 +184,15 @@ animation = &"standing_still"
 [node name="Bubble" parent="." instance=ExtResource("3_jtkl6")]
 unique_name_in_owner = true
 position = Vector2(5.5, -33.5)
+
+[node name="JumpSoundEffect" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 16)
+stream = ExtResource("4_3kt63")
+volume_db = -15.0
+pitch_scale = 0.5
+
+[node name="SlidingSoundEffect" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 15)
+stream = ExtResource("5_no3im")
