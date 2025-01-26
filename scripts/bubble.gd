@@ -48,7 +48,6 @@ func update():
 		sprite.play(grow_animation_name)
 	else:
 		visible = false
-	print(bubble_frame)
 	activate_correct_collider(true)
 
 func activate_correct_collider(force: bool = false ):
