@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcplmnb5aysc"]
+
+[ext_resource type="Texture2D" uid="uid://dod6ib2m0cbkr" path="res://assets/sprites/background/pearly_gates.png" id="1_60qum"]
+
+[node name="pearly_gates_background" type="Node2D"]
+
+[node name="main_background" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 360)
+
+[node name="clouds" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 360, 640, 360)
+
+[node name="more_clouds" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 720, 640, 360)
+
+[node name="shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 1080, 640, 360)
+
+[node name="lights" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 1440, 640, 360)
+
+[node name="last_shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_60qum")
+region_enabled = true
+region_rect = Rect2(0, 1800, 640, 360)
