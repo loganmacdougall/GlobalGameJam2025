@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://daf7l7v2ecmov"]
+[gd_scene load_steps=9 format=4 uid="uid://daf7l7v2ecmov"]
 
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_5icin"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_k4vs1"]
-[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_o7asb"]
+[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_o7asb"]
 [ext_resource type="PackedScene" uid="uid://gwvbm2smhgjr" path="res://nodes/bubble_sky_background.tscn" id="4_w4ekj"]
+[ext_resource type="Texture2D" uid="uid://dro2gy2f8p2qs" path="res://assets/sprites/tutorial_help/signs.png" id="4_wc7hs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)
@@ -29,6 +30,20 @@ tile_set = ExtResource("1_5icin")
 
 [node name="Player" parent="." instance=ExtResource("2_k4vs1")]
 position = Vector2(1026, 681)
+
+[node name="signs" type="Node2D" parent="."]
+
+[node name="diag up" type="Sprite2D" parent="signs"]
+position = Vector2(24, 167)
+texture = ExtResource("4_wc7hs")
+region_enabled = true
+region_rect = Rect2(280, 160, 40, 40)
+
+[node name="diag down" type="Sprite2D" parent="signs"]
+position = Vector2(1246, 218)
+texture = ExtResource("4_wc7hs")
+region_enabled = true
+region_rect = Rect2(360, 160, 40, 40)
 
 [node name="SceneSwitcher" parent="." instance=ExtResource("3_o7asb")]
 position = Vector2(79, 707)
