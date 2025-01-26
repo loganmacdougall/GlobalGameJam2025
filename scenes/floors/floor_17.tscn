@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://ccxs8776lc2s1"]
+[gd_scene load_steps=7 format=4 uid="uid://ccxs8776lc2s1"]
 
-[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="1_glapr"]
+[ext_resource type="PackedScene" uid="uid://ctcplmnb5aysc" path="res://nodes/pearly_gates_background.tscn" id="1_gklfo"]
+[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="1_glapr"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="2_tuqfp"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="3_bgcro"]
 
@@ -11,6 +12,10 @@ size = Vector2(1379, 39)
 size = Vector2(41, 803)
 
 [node name="FloorTemplate" type="Node2D"]
+
+[node name="pearly_gates_background" parent="." instance=ExtResource("1_gklfo")]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
