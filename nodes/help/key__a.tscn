@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://eu571c4nxe6l"]
+
+[ext_resource type="Texture2D" uid="uid://c3ha308g6b674" path="res://assets/sprites/tutorial_help/keyboard.png" id="1_j4vxc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emq52"]
+atlas = ExtResource("1_j4vxc")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wa14"]
+atlas = ExtResource("1_j4vxc")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e7qk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emq52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wa14")
+}],
+"loop": true,
+"name": &"press",
+"speed": 5.0
+}]
+
+[node name="Key_ A" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6e7qk")
+animation = &"press"
+autoplay = "press"
+frame_progress = 0.71833
