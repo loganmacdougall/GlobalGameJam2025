@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvbp3jbcpx8si"
+path="res://.godot/imported/Pink and Purple Bubbles.mp3-d337685a3e173a5306c27e890d8dadc0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Pink and Purple Bubbles.mp3"
+dest_files=["res://.godot/imported/Pink and Purple Bubbles.mp3-d337685a3e173a5306c27e890d8dadc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
