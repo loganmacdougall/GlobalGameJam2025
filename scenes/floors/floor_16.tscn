@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://oemt8hgxuwxg"]
+[gd_scene load_steps=12 format=4 uid="uid://oemt8hgxuwxg"]
 
-[ext_resource type="PackedScene" path="res://nodes/pearly_gates_background.tscn" id="1_fpl1c"]
+[ext_resource type="PackedScene" uid="uid://ctcplmnb5aysc" path="res://nodes/pearly_gates_background.tscn" id="1_fpl1c"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_ucvq5"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_ahpl1"]
-[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_0gga3"]
-[ext_resource type="PackedScene" uid="uid://b8jdxslox7crt" path="res://nodes/speedrun_timer.tscn" id="5_xrx8c"]
-[ext_resource type="PackedScene" uid="uid://cfqjyg5fyrk4q" path="res://nodes/winning_area.tscn" id="6_8fb7g"]
+[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_0gga3"]
+[ext_resource type="PackedScene" path="res://nodes/speedrun_timer.tscn" id="5_xrx8c"]
+[ext_resource type="PackedScene" path="res://nodes/winning_area.tscn" id="6_8fb7g"]
+[ext_resource type="PackedScene" uid="uid://d4lt1sgq7nus4" path="res://nodes/cat.tscn" id="7_cl610"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po7sc"]
 size = Vector2(1372, 40)
@@ -78,3 +79,6 @@ position = Vector2(71, 46)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinningArea"]
 position = Vector2(-9.5, 14)
 shape = SubResource("RectangleShape2D_bvj37")
+
+[node name="Cat" parent="." instance=ExtResource("7_cl610")]
+position = Vector2(20, 65)

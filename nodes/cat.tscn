@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4lt1sgq7nus4"]
+
+[ext_resource type="Texture2D" uid="uid://c11iclja1bgco" path="res://assets/sprites/player_sprites/cat.png" id="1_gc5ut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuabp"]
+atlas = ExtResource("1_gc5ut")
+region = Rect2(0, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_536k4"]
+atlas = ExtResource("1_gc5ut")
+region = Rect2(22, 0, 22, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glx3g"]
+atlas = ExtResource("1_gc5ut")
+region = Rect2(44, 0, 22, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8iff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuabp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_536k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glx3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cat" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y8iff")
+autoplay = "default"
+frame_progress = 0.0331466

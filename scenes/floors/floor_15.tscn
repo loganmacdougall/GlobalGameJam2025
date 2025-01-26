@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=4 uid="uid://b3tt8kiojgwko"]
 
-[ext_resource type="PackedScene" path="res://nodes/pearly_gates_background.tscn" id="1_emucx"]
+[ext_resource type="PackedScene" uid="uid://ctcplmnb5aysc" path="res://nodes/pearly_gates_background.tscn" id="1_emucx"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="2_p7tx6"]
 [ext_resource type="Texture2D" uid="uid://dro2gy2f8p2qs" path="res://assets/sprites/tutorial_help/signs.png" id="3_35f5j"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="3_rqu8b"]
-[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="4_5dq8j"]
-[ext_resource type="PackedScene" uid="uid://b8jdxslox7crt" path="res://nodes/speedrun_timer.tscn" id="5_6a6s0"]
+[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="4_5dq8j"]
+[ext_resource type="PackedScene" path="res://nodes/speedrun_timer.tscn" id="5_6a6s0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)
