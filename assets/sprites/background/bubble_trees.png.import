@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct72u1uwdfd83"
-path="res://.godot/imported/floor_1_background.png-34740bc3c14c103ab36ea1509df013d6.ctex"
+path="res://.godot/imported/bubble_trees.png-8cec60bf5168ffa871c7a59652981015.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/floor_1_background.png"
-dest_files=["res://.godot/imported/floor_1_background.png-34740bc3c14c103ab36ea1509df013d6.ctex"]
+source_file="res://assets/sprites/background/bubble_trees.png"
+dest_files=["res://.godot/imported/bubble_trees.png-8cec60bf5168ffa871c7a59652981015.ctex"]
 
 [params]
 

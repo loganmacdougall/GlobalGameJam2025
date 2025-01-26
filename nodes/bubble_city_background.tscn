@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://ktae7xuisrsh"]
 
-[ext_resource type="Texture2D" uid="uid://c5yivqumxxj74" path="res://assets/sprites/background/floor_0_background.png" id="1_sbx3f"]
+[ext_resource type="Texture2D" uid="uid://c5yivqumxxj74" path="res://assets/sprites/background/bubble_city.png" id="1_sbx3f"]
 [ext_resource type="Texture2D" uid="uid://tyjfokj1gkfi" path="res://assets/sprites/background/bubble.png" id="2_yhpfg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ap51c"]

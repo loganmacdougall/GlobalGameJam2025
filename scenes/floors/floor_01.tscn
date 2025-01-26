@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://di7l305d8sepm"]
 
-[ext_resource type="PackedScene" uid="uid://ktae7xuisrsh" path="res://nodes/floor_0_background.tscn" id="1_1wcy8"]
+[ext_resource type="PackedScene" uid="uid://ktae7xuisrsh" path="res://nodes/bubble_city_background.tscn" id="1_1wcy8"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_xr0we"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_i5djk"]
 [ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_j1kur"]
