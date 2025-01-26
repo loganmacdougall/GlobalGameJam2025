@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_trees_background.tscn" id="1_1pqbp"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_nlfat"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_adv3e"]
-[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_ddrxq"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_ddrxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)
@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_hm5qd")
 
 [node name="SceneSwitcher2" parent="." instance=ExtResource("3_ddrxq")]
 position = Vector2(1133, -16)
-scene_number = 10
+scene_number = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
 position = Vector2(-496, -4)
