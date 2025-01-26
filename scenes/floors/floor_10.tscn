@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://d1x3s0suegux0"]
+[gd_scene load_steps=7 format=4 uid="uid://c72f8re85s8vi"]
 
 [ext_resource type="PackedScene" uid="uid://rlpg4uhkif2u" path="res://nodes/bubble_mountains_background.tscn" id="1_ge6de"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_nlfat"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_adv3e"]
-[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_ddrxq"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_ddrxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)

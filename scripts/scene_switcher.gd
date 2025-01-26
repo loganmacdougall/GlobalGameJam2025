@@ -27,13 +27,13 @@ func _physics_process(_delta: float) -> void:
 				return
 			player.position.y -= Global.height
 		NextSceneDirection.LEFT:
-			if player.position.x < Global.width:
-				return
-			player.position.x -= Global.width
-		NextSceneDirection.RIGHT:
 			if player.position.x > 0:
 				return
 			player.position.x += Global.width
+		NextSceneDirection.RIGHT:
+			if player.position.x < Global.width:
+				return
+			player.position.x -= Global.width
 			
 	Global.push_player_data(player.create_struct())
 	Global.switch_scene(scene_number)

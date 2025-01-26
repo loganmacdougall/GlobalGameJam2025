@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=4 uid="uid://oemt8hgxuwxg"]
+
+[ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_ucvq5"]
+[ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_ahpl1"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_0gga3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po7sc"]
+size = Vector2(1372, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
+size = Vector2(1379, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o55c3"]
+size = Vector2(41, 803)
+
+[node name="FloorTemplate" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAA0AAgAAAAAAAAAFAA4AAgAAAAIAAAAGAA0AAgABAAAAAAAGAA4AAgABAAIAAAAHAA0AAgABAAAAAAAHAA4AAgABAAIAAAAIAA0AAgACAAAAAAAIAA4AAgACAAIAAAALAA8AAgALAAEAAQAMAA4AAgALAAEAAQAOAA8AAgALAAEAAQAJAA4AAgALAAEAAQALAAgAAgALAAEAAQAQAAcAAgALAAEAAQAUAAgAAgALAAEAAQAVAAkAAgALAAEAAQAZAAgAAgALAAEAAQAXAAcAAgALAAEAAQASAAgAAgALAAEAAQANAAcAAgALAAEAAQAKAAcAAgALAAEAAQAJAAYAAgALAAEAAQAMAAgAAgALAAEAAQAOAAYAAgALAAEAAQAPAAYAAgALAAEAAQARAAgAAgALAAEAAQATAAcAAgALAAEAAQAWAAgAAgALAAEAAQAYAAcAAgALAAEAAQAaAAkAAgALAAEAAQAfAA4AAgALAAEAAQAeAA0AAgALAAEAAQAdAA0AAgALAAEAAQAcAAwAAgALAAEAAQAcAAsAAgALAAEAAQAbAAoAAgALAAEAAQAIAAUAAgALAAEAAQAHAAUAAgALAAEAAQAGAAQAAgALAAEAAQADAAMAAgAAAAIAAAADAAIAAgAJAAEAAAACAAIAAgAFAAAAAAABAAIAAgAFAAAAAAAAAAIAAgAEAAAAAAAJAAUAAgALAAEAAQAJAAQAAgALAAEAAQAJAAMAAgALAAEAAQAJAAIAAgALAAEAAQAJAAEAAgALAAEAAQAJAAAAAgALAAEAAQAJAP//AgALAAEAAQAJAP7/AgALAAEAAQAJAP3/AgALAAEAAQAJAPz/AgALAAEAAQAJAPv/AgALAAEAAQAJAPr/AgALAAEAAQAJAPn/AgALAAEAAQAJAPj/AgALAAEAAQAJAPf/AgALAAEAAQAJAPb/AgALAAEAAQAJAPX/AgALAAEAAQAJAPT/AgALAAEAAQAJAPP/AgALAAEAAQAEAAMAAgAFAAAAAAAFAAMAAgAGAAAAAAA=")
+tile_set = ExtResource("1_ucvq5")
+
+[node name="Player" parent="." instance=ExtResource("2_ahpl1")]
+position = Vector2(1038, 643)
+
+[node name="SceneSwitcher2" parent="." instance=ExtResource("3_0gga3")]
+position = Vector2(1133, -16)
+scene_number = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
+position = Vector2(-496, -4)
+shape = SubResource("RectangleShape2D_po7sc")
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("3_0gga3")]
+position = Vector2(79, 707)
+next_scene_direction = 1
+scene_number = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher"]
+position = Vector2(559.5, 33.5)
+shape = SubResource("RectangleShape2D_hm5qd")
+
+[node name="SceneSwitcher3" parent="." instance=ExtResource("3_0gga3")]
+position = Vector2(-19, 333)
+next_scene_direction = 2
+scene_number = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher3"]
+position = Vector2(-1.5, 27.5)
+shape = SubResource("RectangleShape2D_o55c3")
+
+[node name="SceneSwitcher4" parent="." instance=ExtResource("3_0gga3")]
+position = Vector2(1302, 333)
+next_scene_direction = 3
+scene_number = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher4"]
+position = Vector2(-1.5, 27.5)
+shape = SubResource("RectangleShape2D_o55c3")
