@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
 		return
 		
 	Global.game_won()
+	Global.switch_win_scene()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

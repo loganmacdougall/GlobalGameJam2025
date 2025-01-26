@@ -26,6 +26,10 @@ func pop_player_data() -> PlayerStruct:
 	player_struct = null
 	return p
 
+func switch_win_scene():
+	const win_scene = "res://scenes/win_scene.tscn"
+	get_tree().change_scene_to_file(win_scene)
+
 func switch_scene(scene_number:int):
 	var scene_start = "res://scenes/floors/floor_"
 	var scene_end = ".tscn"
