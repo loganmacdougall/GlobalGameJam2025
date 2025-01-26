@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5yivqumxxj74"
-path="res://.godot/imported/floor_0_background.png-08cd9fa1d28ffab074a8b78a39d91433.ctex"
+uid="uid://dklxwth7l3fs0"
+path="res://.godot/imported/bubble_mountain.png-26463d41fadc3b1a9f8d465cc575a8e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/floor_0_background.png"
-dest_files=["res://.godot/imported/floor_0_background.png-08cd9fa1d28ffab074a8b78a39d91433.ctex"]
+source_file="res://assets/sprites/background/bubble_mountain.png"
+dest_files=["res://.godot/imported/bubble_mountain.png-26463d41fadc3b1a9f8d465cc575a8e1.ctex"]
 
 [params]
 
