@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://bnj4ojodsowu5"]
 
-[ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_mountain_background.tscn" id="1_b6o27"]
+[ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_trees_background.tscn" id="1_b6o27"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_patdc"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_154ut"]
 [ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_r3pll"]
@@ -30,7 +30,7 @@ position = Vector2(1009, 692)
 [node name="SceneSwitcher" parent="." instance=ExtResource("3_r3pll")]
 position = Vector2(79, 707)
 next_scene_direction = 1
-scene_number = 6
+scene_number = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher"]
 position = Vector2(559.5, 33.5)
@@ -38,7 +38,7 @@ shape = SubResource("RectangleShape2D_hm5qd")
 
 [node name="SceneSwitcher2" parent="." instance=ExtResource("3_r3pll")]
 position = Vector2(1133, -16)
-scene_number = 9
+scene_number = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
 position = Vector2(-496, -4)

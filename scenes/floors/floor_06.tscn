@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://bgidxbjj7kxw0"]
 
-[ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_mountain_background.tscn" id="1_1pqbp"]
+[ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_trees_background.tscn" id="1_1pqbp"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_nlfat"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_adv3e"]
 [ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_ddrxq"]
@@ -30,7 +30,7 @@ position = Vector2(247, 586)
 [node name="SceneSwitcher" parent="." instance=ExtResource("3_ddrxq")]
 position = Vector2(79, 707)
 next_scene_direction = 1
-scene_number = 7
+scene_number = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher"]
 position = Vector2(559.5, 33.5)

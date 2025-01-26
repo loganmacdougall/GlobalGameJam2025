@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://rlpg4uhkif2u"]
+
+[ext_resource type="Texture2D" uid="uid://dklxwth7l3fs0" path="res://assets/sprites/background/bubble_mountain.png" id="1_lujqq"]
+
+[node name="Bubble_mountains_background" type="Node2D"]
+
+[node name="background_a" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujqq")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 360)
+
+[node name="background_b" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujqq")
+region_enabled = true
+region_rect = Rect2(0, 360, 640, 360)
+
+[node name="background_c" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujqq")
+region_enabled = true
+region_rect = Rect2(0, 720, 640, 360)
+
+[node name="background_d" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujqq")
+region_enabled = true
+region_rect = Rect2(0, 1080, 640, 360)
+
+[node name="shadow" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujqq")
+region_enabled = true
+region_rect = Rect2(0, 1440, 640, 360)
