@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bmjskkepucdid"]
+[gd_scene load_steps=8 format=4 uid="uid://bmjskkepucdid"]
 
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_dpvsx"]
 [ext_resource type="PackedScene" uid="uid://b3fj8gxxbl4ll" path="res://nodes/bubble_trees_background.tscn" id="1_jwslc"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_d0hl0"]
 [ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_381wq"]
+[ext_resource type="PackedScene" uid="uid://b8jdxslox7crt" path="res://nodes/speedrun_timer.tscn" id="5_wsikv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)
@@ -43,3 +44,5 @@ scene_number = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
 position = Vector2(-496, -4)
 shape = SubResource("RectangleShape2D_mo7co")
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("5_wsikv")]

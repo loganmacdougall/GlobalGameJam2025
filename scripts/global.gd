@@ -5,6 +5,18 @@ var height = ProjectSettings.get_setting("display/window/size/viewport_height")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var player_struct: PlayerStruct = null
+var time_beaten: String = ""
+var won: bool = false
+
+func game_won():
+	if won:
+		return
+		
+	var total_seconds = Time.get_ticks_msec() / 1000
+	var minutes = floor(total_seconds / 60)
+	var seconds = total_seconds - minutes * 60
+	time_beaten = str(minutes) + ":" + ("0" if seconds < 10 else "") + str(seconds)
+	won = true
 
 func push_player_data(player: PlayerStruct):
 	player_struct = player

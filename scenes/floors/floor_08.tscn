@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c72f8re85s8vi"]
+[gd_scene load_steps=9 format=4 uid="uid://c72f8re85s8vi"]
 
 [ext_resource type="PackedScene" uid="uid://rlpg4uhkif2u" path="res://nodes/bubble_mountains_background.tscn" id="1_6jh1h"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="1_dpvsx"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="2_d0hl0"]
-[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="3_381wq"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="3_381wq"]
 [ext_resource type="Texture2D" uid="uid://dro2gy2f8p2qs" path="res://assets/sprites/tutorial_help/signs.png" id="3_b0oik"]
+[ext_resource type="PackedScene" uid="uid://b8jdxslox7crt" path="res://nodes/speedrun_timer.tscn" id="5_6x47s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcrfr"]
 size = Vector2(1379, 39)
@@ -58,3 +59,5 @@ scene_number = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher2"]
 position = Vector2(-496, -4)
 shape = SubResource("RectangleShape2D_jb2e3")
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("5_6x47s")]

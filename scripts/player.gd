@@ -91,6 +91,9 @@ func copy_struct(struct: PlayerStruct):
 	bubble.update()
 
 func _physics_process(delta: float) -> void:
+	if Global.won:
+		return
+		
 	if not is_on_floor() and not just_copied:
 		vel = get_real_velocity()
 		

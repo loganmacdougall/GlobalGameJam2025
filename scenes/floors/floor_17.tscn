@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://ccxs8776lc2s1"]
+[gd_scene load_steps=8 format=4 uid="uid://ccxs8776lc2s1"]
 
-[ext_resource type="PackedScene" uid="uid://ctcplmnb5aysc" path="res://nodes/pearly_gates_background.tscn" id="1_gklfo"]
-[ext_resource type="PackedScene" path="res://nodes/SceneSwitcher.tscn" id="1_glapr"]
+[ext_resource type="PackedScene" path="res://nodes/pearly_gates_background.tscn" id="1_gklfo"]
+[ext_resource type="PackedScene" uid="uid://dwwbpvbdarl14" path="res://nodes/SceneSwitcher.tscn" id="1_glapr"]
 [ext_resource type="TileSet" uid="uid://bl3vxq2god1tc" path="res://assets/tilesets/game_tileset.tres" id="2_tuqfp"]
 [ext_resource type="PackedScene" uid="uid://dmt6u2uu2ow53" path="res://nodes/player.tscn" id="3_bgcro"]
+[ext_resource type="PackedScene" uid="uid://b8jdxslox7crt" path="res://nodes/speedrun_timer.tscn" id="5_q48bv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5qd"]
 size = Vector2(1379, 39)
@@ -53,3 +54,5 @@ scene_number = 17
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitcher4"]
 position = Vector2(-1.5, 27.5)
 shape = SubResource("RectangleShape2D_o55c3")
+
+[node name="SpeedrunTimer" parent="." instance=ExtResource("5_q48bv")]
